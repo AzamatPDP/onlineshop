@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzaStore — Zamonaviy Onlayn Do'kon</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight text-indigo-600 flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Aza<span class="text-gray-900">Store</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                <a href="#hero" class="hover:text-indigo-600 transition">Bosh sahifa</a>
+                <a href="#categories" class="hover:text-indigo-600 transition">Kategoriyalar</a>
+                <a href="#products" class="hover:text-indigo-600 transition">Mahsulotlar</a>
+                <a href="#footer" class="hover:text-indigo-600 transition">Aloqa</a>
+            </nav>
+
+            <!-- Cart Icon & Button -->
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="relative p-2 text-gray-700 hover:text-indigo-600 transition focus:outline-none">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="relative bg-gradient-to-r from-indigo-900 to-slate-900 text-white py-20 lg:py-32 overflow-hidden">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-semibold tracking-wide uppercase border border-indigo-500/30">
+                        Yangi Kolleksiya 2026
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Sifat va Uslub <br><span class="text-indigo-400">Bir Joyda</span>
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg max-w-lg mx-auto md:mx-0">
+                        Eng so'nggi rusumdagi gadjetlar, zamonaviy kiyimlar va kundalik aksessuarlarni eng hamyonbop narxlarda xarid qiling.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#products" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30">
+                            Xaridni boshlash <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#categories" class="inline-flex items-center justify-center px-6 py-3 border border-gray-700 text-base font-medium rounded-xl text-gray-300 hover:bg-gray-800 transition">
+                            Kategoriyalar
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-2xl overflow-hidden shadow-2xl border border-white/10 rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop" alt="Hero Product" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CATEGORIES SECTION -->
+        <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Ommabop Kategoriyalar</h2>
+                <p class="text-gray-500 mt-2">O'zingizga kerakli bo'limni tanlang</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=600&auto=format&fit=crop" alt="Elektronika" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Elektronika</h3>
+                            <p class="text-gray-300 text-sm mt-1">Smartfonlar, Noutbuklar va Gadjetlar</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop" alt="Kiyim-kechak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Kiyim-kechak</h3>
+                            <p class="text-gray-300 text-sm mt-1">Erkaklar va Ayollar liboslari</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop" alt="Aksessuarlar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Aksessuarlar</h3>
+                            <p class="text-gray-300 text-sm mt-1">Soatlar, Sumkalar va Ko'zoynaklar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PRODUCT GRID -->
+        <section id="products" class="py-16 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Mahsulotlar Katalogi</h2>
+                        <p class="text-gray-500 mt-2">Eng ko'p sotilgan va saralangan mahsulotlarimiz</p>
+                    </div>
+                </div>
+                
+                <!-- Product List Container -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Products will be injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. SLIDE-OVER SHOPPING CART MODAL -->
+    <div id="cart-modal" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-gray-900/50 backdrop-blur-sm transition-opacity" id="cart-overlay"></div>
+
+        <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <!-- Cart Header -->
+                <div class="p-6 bg-gray-50 border-b border-gray-100 flex items-center justify-between">
+                    <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <i class="fa-solid fa-cart-shopping text-indigo-600"></i> Savatcha
+                    </h2>
+                    <button id="close-cart-btn" class="p-2 text-gray-400 hover:text-gray-600 rounded-lg">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items Container -->
+                <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+                    <!-- Items injected via JS -->
+                </div>
+
+                <!-- Cart Footer -->
+                <div class="p-6 border-t border-gray-100 bg-gray-50 space-y-4">
+                    <div class="flex justify-between text-base font-medium text-gray-900">
+                        <p>Jami summa:</p>
+                        <p id="cart-total">0 UZS</p>
+                    </div>
+                    <button id="checkout-btn" class="w-full bg-indigo-600 text-white font-medium py-3 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30">
+                        Buyurtma berish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. FOOTER -->
+    <footer id="footer" class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <a href="#" class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-indigo-500"></i> AzaStore
+                </a>
+                <p class="text-sm">Mijozlarimiz uchun sifatli va ishonchli mahsulotlarni taqdim etishdan mamnunmiz.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Navigatsiya</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#hero" class="hover:text-white transition">Bosh sahifa</a></li>
+                    <li><a href="#categories" class="hover:text-white transition">Kategoriyalar</a></li>
+                    <li><a href="#products" class="hover:text-white transition">Mahsulotlar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Bog'lanish</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fa-solid fa-envelope mr-2"></i> info@azastore.uz</li>
+                    <li><i class="fa-solid fa-phone mr-2"></i> +998 (90) 123-45-67</li>
+                    <li><i class="fa-solid fa-location-dot mr-2"></i> Toshkent sh., O'zbekiston</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Biz ijtimoiy tarmoqlarda</h4>
+                <div class="flex space-x-4 text-lg">
+                    <a href="#" class="hover:text-indigo-400 transition"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-indigo-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-gray-800 text-center text-xs">
+            &copy; 2026 AzaStore. Barcha huquqlar himoyalangan.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data: Products List
+        const products = [
+            {
+                id: 1,
+                name: "Aqlli Soat Premium",
+                price: 450000,
+                rating: 5,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 2,
+                name: "Simsiz Quloqchinlar Pro",
+                price: 280000,
+                rating: 4,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 3,
+                name: "Klassik Erkaklar Sumkasi",
+                price: 320000,
+                rating: 5,
+                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 4,
+                name: "Minimalist Soat Gold",
+                price: 600000,
+                rating: 5,
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 5,
+                name: "Sport Oyoq kiyimi",
+                price: 520000,
+                rating: 4,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 6,
+                name: "Quyoshga Qarshi Ko'zoynak",
+                price: 150000,
+                rating: 4,
+                image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 7,
+                name: "Dizaynerlik Ko'ylagi",
+                price: 380000,
+                rating: 5,
+                image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                id: 8,
+                name: "Charm Hamyon",
+                price: 180000,
+                rating: 4,
+                image: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=500&auto=format&fit=crop"
+            }
+        ];
+
+        // State: Shopping Cart
+        let cart = [];
+
+        // Render Products
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(product => `
+                <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                            ${'<i class="fa-solid fa-star"></i>'.repeat(product.rating)}
+                        </div>
+                        <h3 class="font-semibold text-gray-900 text-base mb-1">${product.name}</h3>
+                        <p class="text-indigo-600 font-bold text-lg">${product.price.toLocaleString('uz-UZ')} UZS</p>
+                    </div>
+                    <button onclick="addToCart(${product.id})" class="w-full mt-4 bg-gray-900 hover:bg-indigo-600 text-white text-sm font-medium py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Savatchaga
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const cartItem = cart.find(item => item.id === productId);
+
+            if (cartItem) {
+                cartItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            // Update Badge
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-badge').innerText = totalItems;
+
+            // Render Cart Items
+            const cartContainer = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `<div class="text-center py-12 text-gray-400">Savatchangiz bo'sh</div>`;
+            } else {
+                cartContainer.innerHTML = cart.map(item => `
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">${item.name}</h4>
+                                <p class="text-xs text-gray-500">${item.price.toLocaleString('uz-UZ')} x ${item.quantity}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-semibold text-sm text-gray-900">${(item.price * item.quantity).toLocaleString('uz-UZ')} UZS</span>
+                            <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-600 p-1">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Update Total Price
+            const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('cart-total').innerText = totalSum.toLocaleString('uz-UZ') + ' UZS';
+        }
+
+        // Modal Controls
+        const cartModal = document.getElementById('cart-modal');
+        const cartBtn = document.getElementById('cart-btn');
+        const closeCartBtn = document.getElementById('close-cart-btn');
+        const cartOverlay = document.getElementById('cart-overlay');
+
+        cartBtn.addEventListener('click', () => cartModal.classList.remove('hidden'));
+        closeCartBtn.addEventListener('click', () => cartModal.classList.add('hidden'));
+        cartOverlay.addEventListener('click', () => cartModal.classList.add('hidden'));
+
+        // Initialize
+        renderProducts();
+    </script>
+</body>
+</html>
